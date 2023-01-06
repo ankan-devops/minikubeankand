@@ -1,0 +1,62 @@
+nameSufffix: -frontend
+
+replicas:
+  - name: frontend
+    count: 2
+
+patchesJson6902:
+- target:
+    version: v1
+    kind: Deployment
+    name: deploy
+  patch: |-
+    - op: replace
+      path: /metadata/labels/app
+      value: deploy-frontend
+    - op: replace
+      path: /spec/selector/matchLabels/app
+      value: deploy-frontend
+    - op: replace
+      path: /template/metadata/labels/app
+      value: deploy-frontend
+    - op: replace
+      path: /spec/containers/0/name
+      value: deploy-frontend
+
+patchesJson6902:
+- target:
+    version: v1
+    kind: Service
+    name: service
+  patch: |-
+    - op: replace
+      path: /spec/selector/app
+      value: service-frontend
+
+patchesJson6902:
+- target:
+    version: v1
+    kind: Service
+    name: service
+  patch: |-
+    - op: replace
+      path: /spec/selector/app
+      value: service-frontend
+
+patchesJson6902:
+- target:
+    version: v1
+    kind: Ingress
+    name: ingress
+  patch: |-
+    - op: replace
+      path: /spec/rules/http/paths/0/backend/service/name
+      value: ingress-frontend
+
+images:
+- name: images
+  newName: nginx
+  newTag: 1.23.3-alpine
+
+resources:
+  - ../../base

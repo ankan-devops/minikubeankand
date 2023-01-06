@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy
+  labels:
+    app: deploy
+spec:
+  selector:
+    matchLabels:
+      app: deploy
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: deploy
+    spec:
+      containers:
+      - name: deploy
+        image: images
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 256m
+          requests:
+            cpu: 150m
+        readinessProbe:
+          exec:
+            command:
+            - cat
+            - /usr/share/nginx/html/index.html
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          successThreshold: 1
+        livenessProbe:
+          exec:
+            command:
+            - cat
+            - /usr/share/nginx/html/index.html
+          failureThreshold: 3
+          periodSeconds: 30
+          initialDelaySeconds: 30
