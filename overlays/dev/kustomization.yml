@@ -49,8 +49,8 @@ patchesJson6902:
 
 images:
 - name: images
-  newName: nginx
-  newTag: 1.23.3-alpine
+  newName: httpd
+  newTag: 2.4.54
 
 resources:
   - ../../base
