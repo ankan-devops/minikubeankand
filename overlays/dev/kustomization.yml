@@ -41,7 +41,7 @@ patchesJson6902:
     name: ingress
   patch: |-
     - op: replace
-      path: /spec/rules/http/paths/0/backend/service/name
+      path: /spec/rules/0/http/paths/0/backend/service/name
       value: ingress-frontend
 
 images:
