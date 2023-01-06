@@ -1,5 +1,5 @@
-nameSuffix: -dev
-namespace: dev
+nameSuffix: -prod
+namespace: prod
 
 replicas:
   - name: deploy
@@ -13,16 +13,16 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /metadata/labels/app
-      value: deploy-dev
+      value: deploy-prod
     - op: replace
       path: /spec/selector/matchLabels/app
-      value: deploy-dev
+      value: deploy-prod
     - op: replace
       path: /template/metadata/labels/app
-      value: deploy-dev
+      value: deploy-prod
     - op: replace
       path: /spec/containers/0/name
-      value: deploy-dev
+      value: deploy-prod
 
 patchesJson6902:
 - target:
@@ -32,7 +32,7 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /spec/selector/app
-      value: service-dev
+      value: service-prod
 
 patchesJson6902:
 - target:
@@ -42,7 +42,7 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /spec/rules/0/http/paths/0/backend/service/name
-      value: service-dev
+      value: service-prod
 
 images:
 - name: images
