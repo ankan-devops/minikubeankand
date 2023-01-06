@@ -2,7 +2,7 @@ nameSuffix: -frontend
 namespace: dev
 
 replicas:
-  - name: frontend
+  - name: deploy
     count: 2
 
 patchesJson6902:
@@ -23,16 +23,6 @@ patchesJson6902:
     - op: replace
       path: /spec/containers/0/name
       value: deploy-frontend
-
-patchesJson6902:
-- target:
-    version: v1
-    kind: Service
-    name: service
-  patch: |-
-    - op: replace
-      path: /spec/selector/app
-      value: service-frontend
 
 patchesJson6902:
 - target:
