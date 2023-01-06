@@ -9,7 +9,7 @@ metadata:
 
 spec:
   rules:
-  - host: test.info
+  - host: test.local
     http:
       paths:
         - path: /
