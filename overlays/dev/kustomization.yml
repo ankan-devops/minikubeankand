@@ -3,7 +3,7 @@ namespace: dev
 
 replicas:
   - name: deploy
-    count: 2
+    count: 1
 
 patchesJson6902:
 - target:
@@ -43,6 +43,9 @@ patchesJson6902:
     - op: replace
       path: /spec/rules/0/http/paths/0/backend/service/name
       value: service-dev
+    - op: replace
+      path: /spec/rules/0/host
+      value: dev.local
 
 images:
 - name: images
