@@ -1,4 +1,5 @@
-nameSufffix: -frontend
+nameSuffix: -frontend
+namespace: dev
 
 replicas:
   - name: frontend
