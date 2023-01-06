@@ -9,7 +9,8 @@ metadata:
 
 spec:
   rules:
-  - http:
+  - host: test.info
+    http:
       paths:
         - path: /
           pathType: Prefix
