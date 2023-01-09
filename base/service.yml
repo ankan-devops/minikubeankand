@@ -4,7 +4,7 @@ metadata:
   name: service
 spec:
   selector:
-    app: deploy-dev
+    app: deploy
   type: NodePort
   ports:
   - name: http
