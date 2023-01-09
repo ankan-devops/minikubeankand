@@ -11,12 +11,12 @@ replicas:
 - name: deploy
   count: 1
 
-patchesJson6902:
-- target:
-    version: v1
-    kind: Service
-    name: service
-  path: service.patch.yml
+# patchesJson6902:
+# - target:
+#     version: v1
+#     kind: Service
+#     name: service
+#   path: service.patch.yml
 
 patchesJson6902:
 - target:
