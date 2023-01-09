@@ -1,0 +1,9 @@
+patchesJson6902:
+- target:
+    version: v1
+    kind: Service
+    name: service
+  patch: |-
+    - op: replace
+      path: /spec/selector/app
+      value: service-dev

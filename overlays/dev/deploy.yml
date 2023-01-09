@@ -1,0 +1,30 @@
+patchesJson6902:
+- target:
+    version: v1
+    name: deploy
+    kind: Deployment
+  patch: |-
+    - op: replace
+      path: /spec/template/spec/containers/0/name
+      value: deploy-dev
+    - op: replace
+      path: /spec/template/spec/containers/0/command
+      value: ["/bin/sh", "-c", "echo dev > /usr/share/nginx/html/index.html"]
+    - op: replace
+      path: /metadata/labels/app
+      value: deploy-dev
+    - op: replace
+      path: /spec/selector/matchLabels/app
+      value: deploy-dev
+    - op: replace
+      path: /spec/template/metadata/labels/app
+      value: deploy-dev
+
+images:
+- name: images
+  newName: nginx
+  newTag: 1.23.3-alpine
+
+  replicas:
+  - name: deploy
+    count: 1

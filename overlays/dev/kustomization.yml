@@ -1,48 +1,8 @@
 nameSuffix: -dev
 namespace: dev
 
-replicas:
-  - name: deploy
-    count: 1
-
-# patchesJson6902:
-# - target:
-#     version: v1
-#     name: deploy
-#     kind: Deployment
-#   patch: |-
-#     - op: replace
-#       path: /spec/template/spec/containers/0/name
-#       value: deploydev
-
-
-patches:
-- target:
-    version: v1
-    kind: Service
-    name: service
-  patch: |-
-    - op: replace
-      path: /spec/selector/app
-      value: service-dev
-
-# patches:
-# - target:
-#     version: v1
-#     kind: Ingress
-#     name: ingress
-#   patch: |-
-#     - op: replace
-#       path: /spec/rules/0/http/paths/0/backend/service/name
-#       value: service-dev
-#     - op: replace
-#       path: /spec/rules/0/host
-#       value: dev.local
-
-images:
-- name: images
-  newName: nginx
-  newTag: 1.23.3-alpine
-
 resources:
   - ../../base
+  - deploy.yml
+  - service.yml
+  - ingress.yml
