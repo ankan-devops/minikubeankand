@@ -3,7 +3,7 @@
       value: deploy-dev
     - op: add
       path: /spec/template/spec/containers/0/command
-      value: ["/bin/sh", "-c", "echo 'dev' > /usr/share/nginx/html/index.html", "&&", "nginx"]
+      value: ["/bin/sh", "-c", "'echo 'dev' > /usr/share/nginx/html/index.html'", "&&", "'nginx -s reload"]
     - op: replace
       path: /metadata/labels/app
       value: deploy-dev
