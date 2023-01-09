@@ -24,8 +24,9 @@ patches:
     name: service
   patch: |-
     - op: replace
-      path: /spec/selector/app
-      value: service-dev
+      path: /spec/selector
+      value:
+        app: service-dev
 
 patches:
 - target:
