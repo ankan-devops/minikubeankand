@@ -11,10 +11,16 @@ replicas:
 - name: deploy
   count: 1
 
-patches:
-  - deploy.patch.yml
-  - service.patch.yml
-  - ingress.patch.yml
+patchesJson6902:
+- target:
+    version: v1
+    name: deploy
+    kind: Deployment
+  path: deploy.patch.yml
+
+
+  # - service.patch.yml
+  # - ingress.patch.yml
 
 resources:
   - ../../base
