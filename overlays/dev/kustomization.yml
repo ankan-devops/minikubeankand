@@ -14,10 +14,8 @@ patches:
   patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/name
-      value: deploy-dev
-  options:
-    allowNameChange: true
-    allowKindChange: true
+      value: "deploy-dev"
+
 
 patches:
 - target:
