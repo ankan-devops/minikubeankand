@@ -22,8 +22,8 @@ patchesJson6902:
       path: /spec/template/spec/containers/0/name
       value: deploy-dev
     - op: replace
-      path: /spec/template/spec/containers/0/command
-      value: ["echo 'dev' > /usr/share/nginx/html/index.html"]
+      path: /spec/template/spec/containers/0/args
+      value: ["-c", "echo 'dev' > /usr/share/nginx/html/index.html"]
 
 patchesJson6902:
 - target:
