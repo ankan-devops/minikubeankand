@@ -18,11 +18,14 @@ patchesJson6902:
       path: /spec/selector/matchLabels/app
       value: deploy-prod
     - op: replace
-      path: /template/metadata/labels/app
+      path: /spec/template/metadata/labels/app
       value: deploy-prod
     - op: replace
-      path: /spec/containers/0/name
+      path: /spec/template/spec/containers/0/name
       value: deploy-prod
+    - op: add
+      path: /spec/template/spec/containers/0/command
+      value: ['sh', '-c', 'echo', '"prod"', '>', '/usr/share/nginx/html/index.html']
 
 patchesJson6902:
 - target:
