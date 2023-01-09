@@ -23,7 +23,7 @@ spec:
       - name: deploy
         image: images
         command: ["/bin/sh"]
-        args: []
+        #args: []
         ports:
         - containerPort: 80
         resources:
