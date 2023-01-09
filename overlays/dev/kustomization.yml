@@ -18,9 +18,19 @@ patchesJson6902:
     kind: Deployment
   path: deploy.patch.yml
 
+patchesJson6902:
+- target:
+    version: v1
+    kind: Service
+    name: service
+  path: service.patch.yml
 
-  # - service.patch.yml
-  # - ingress.patch.yml
+patchesJson6902:
+- target:
+    version: v1
+    kind: Ingress
+    name: ingress
+  path: ingress.patch.yml
 
 resources:
   - ../../base
