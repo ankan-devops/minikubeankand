@@ -30,7 +30,7 @@ patchesJson6902:
       value: ["/bin/sh", "-c", "echo dev > /usr/share/nginx/html/index.html"]
     - op: replace
       path: /spec/template/spec/containers/0/image
-      value: nginx:1.23.3-alpine
+      value: "nginx:1.23.3-alpine"
 
 patchesJson6902:
 - target:
