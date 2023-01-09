@@ -5,15 +5,15 @@ replicas:
   - name: deploy
     count: 1
 
-patchesJson6902:
-- target:
-    version: v1
-    name: deploy
-    kind: Deployment
-  patch: |-
-    - op: replace
-      path: /spec/template/spec/containers/0/name
-      value: deploydev
+# patchesJson6902:
+# - target:
+#     version: v1
+#     name: deploy
+#     kind: Deployment
+#   patch: |-
+#     - op: replace
+#       path: /spec/template/spec/containers/0/name
+#       value: deploydev
 
 
 patches:
