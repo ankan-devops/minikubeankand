@@ -15,6 +15,9 @@ patches:
     - op: replace
       path: /spec/template/spec/containers/0/name
       value: deploy-dev
+  options:
+    allowNameChange: true
+    allowKindChange: true
 
 patches:
 - target:
