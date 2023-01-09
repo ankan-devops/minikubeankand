@@ -11,13 +11,13 @@ patchesJson6902:
     name: deploy
   patch: |-
     - op: replace
-      path: /metadata/labels/app
+      path: /metadata/labels/0/app
       value: deploy-dev
     - op: replace
-      path: /spec/selector/matchLabels/app
+      path: /spec/selector/matchLabels/0/app
       value: deploy-dev
     - op: replace
-      path: /spec/template/metadata/labels/app
+      path: /spec/template/metadata/labels/0/app
       value: deploy-dev
     - op: replace
       path: /spec/template/spec/containers/0/name
