@@ -3,6 +3,6 @@ namespace: dev
 
 resources:
   - ../../base
-  - deploy.yml
-  - service.yml
-  - ingress.yml
+  - deploy.patch.yml
+  - service.patch.yml
+  - ingress.patch.yml
