@@ -18,7 +18,7 @@ replicas:
 #     name: service
 #   path: service.patch.yml
 
-patchesJson6092:
+patchesJson6902:
 - target:
     version: v1
     name: deploy
