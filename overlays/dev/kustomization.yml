@@ -23,7 +23,7 @@ patchesJson6902:
       value: deploy-dev
     - op: replace
       path: /spec/template/spec/containers/0/command
-      value: "['sh', '-c', 'echo', '"dev"', '>', '/usr/share/nginx/html/index.html']"
+      value: ['sh', '-c', 'echo', '"dev"', '>', '/usr/share/nginx/html/index.html']
 
 patchesJson6902:
 - target:
