@@ -8,17 +8,15 @@ replicas:
 patchesJson6902:
 - target:
     kind: Deployment
-    name: deploy
   patch: |-
     - op: replace
-      path: /metadata/labels/
-      value:
-        app: deploy-dev
-    - op: replace
-      path: /spec/selector/matchLabels/0/app
+      path: /metadata/labels/app
       value: deploy-dev
     - op: replace
-      path: /spec/template/metadata/labels/0/app
+      path: /spec/selector/matchLabels/app
+      value: deploy-dev
+    - op: replace
+      path: /spec/template/metadata/labels/app
       value: deploy-dev
     - op: replace
       path: /spec/template/spec/containers/0/name
