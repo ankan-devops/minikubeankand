@@ -19,12 +19,3 @@ patchesJson6902:
     - op: replace
       path: /spec/template/metadata/labels/app
       value: deploy-dev
-
-images:
-- name: images
-  newName: nginx
-  newTag: 1.23.3-alpine
-
-  replicas:
-  - name: deploy
-    count: 1

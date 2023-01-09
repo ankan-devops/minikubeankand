@@ -1,8 +1,20 @@
 nameSuffix: -dev
 namespace: dev
 
-resources:
-  - ../../base
+
+images:
+- name: images
+  newName: nginx
+  newTag: 1.23.3-alpine
+
+replicas:
+- name: deploy
+  count: 1
+
+patches:
   - deploy.patch.yml
   - service.patch.yml
   - ingress.patch.yml
+
+resources:
+  - ../../base
