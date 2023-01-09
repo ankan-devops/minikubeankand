@@ -2,8 +2,8 @@
       path: /spec/template/spec/containers/0/name
       value: deploy-dev
     - op: add
-      path: /spec/template/spec/containers/0/command
-      value: ["echo 'dev' > /usr/share/nginx/html/index.html", "&&", "nginx -s reload"]
+      path: /spec/template/spec/containers/0/args
+      value: ["-c", "echo 'dev' > /usr/share/nginx/html/index.html"]
     - op: replace
       path: /metadata/labels/app
       value: deploy-dev
