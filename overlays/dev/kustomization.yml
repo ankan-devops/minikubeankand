@@ -18,7 +18,7 @@ patchesJson6902:
     # - op: replace
     #   path: /spec/template/metadata/labels/app
     #   value: deploy-dev
-    # - op: replace
+    - op: replace
       path: /spec/template/spec/containers/0/name
       value: deploy-dev
     - op: replace
