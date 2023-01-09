@@ -12,9 +12,9 @@ patches:
     name: deploy
     kind: Deployment
   patch: |-
-    - op: add
+    - op: replace
       path: /spec/template/spec/containers/0/name
-      value: "deploy-dev"
+      value: "deploydev"
 
 
 patches:
