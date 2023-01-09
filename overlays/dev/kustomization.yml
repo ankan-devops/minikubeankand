@@ -9,19 +9,19 @@ patchesJson6902:
 - target:
     kind: Deployment
   patch: |-
-    - op: replace
-      path: /metadata/labels/app
-      value: deploy-dev
-    - op: replace
-      path: /spec/selector/matchLabels/app
-      value: deploy-dev
-    - op: replace
-      path: /spec/template/metadata/labels/app
-      value: deploy-dev
-    - op: replace
+    # - op: replace
+    #   path: /metadata/labels/app
+    #   value: deploy-dev
+    # - op: replace
+    #   path: /spec/selector/matchLabels/app
+    #   value: deploy-dev
+    # - op: replace
+    #   path: /spec/template/metadata/labels/app
+    #   value: deploy-dev
+    # - op: replace
       path: /spec/template/spec/containers/0/name
       value: deploy-dev
-    - op: add
+    - op: replace
       path: /spec/template/spec/containers/0/command
       value: ['sh', '-c', 'echo', '"dev"', '>', '/usr/share/nginx/html/index.html']
 
