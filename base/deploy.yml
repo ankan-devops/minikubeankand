@@ -22,6 +22,7 @@ spec:
       containers:
       - name: deploy
         image: images
+        command:
         ports:
         - containerPort: 80
         resources:
