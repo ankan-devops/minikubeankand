@@ -13,24 +13,9 @@ patchesJson6902:
     kind: Deployment
     namespace: dev
   patch: |-
-    # - op: replace
-    #   path: /metadata/labels/app
-    #   value: deploy-dev
-    # - op: replace
-    #   path: /spec/selector/matchLabels/app
-    #   value: deploy-dev
-    # - op: replace
-    #   path: /spec/template/metadata/labels/app
-    #   value: deploy-dev
-    - op: replace
-      path: /spec/template/spec/containers/0/name
-      value: deploy-dev
-    - op: replace
-      path: /spec/template/spec/containers/0/command
-      value: ["/bin/sh", "-c", "echo dev > /usr/share/nginx/html/index.html"]
     - op: replace
       path: /spec/template/spec/containers/0/image
-      value: "nginx:1.23.3-alpine"
+      value: nginx:1.23.3-alpine
 
 patchesJson6902:
 - target:
