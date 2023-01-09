@@ -13,10 +13,23 @@ patches:
     kind: Deployment
   patch: |-
     - op: replace
-      path: /spec/template/spec/containers/0/image
-      value: nginx:1.23.3-alpine
+      path: /spec/template/spec/containers/0/name
+      value: deploy-dev
+    - op: replace
+      path: /spec/template/spec/containers/0/command
+      value: ["/bin/sh", "-c", "echo dev > /usr/share/nginx/html/index.html"]
+    - op: replace
+      path: /metadata/labels/app
+      value: deploy-dev
+    - op: replace
+      path: /spec/selector/matchLabels/app
+      value: deploy-dev
+    - op: replace
+      path: /spec/template/metadata/labels/app
+      value: deploy-dev
 
-patchesJson6902:
+
+patches:
 - target:
     version: v1
     kind: Service
@@ -26,7 +39,7 @@ patchesJson6902:
       path: /spec/selector/app
       value: service-dev
 
-patchesJson6902:
+patches:
 - target:
     version: v1
     kind: Ingress
@@ -39,10 +52,10 @@ patchesJson6902:
       path: /spec/rules/0/host
       value: dev.local
 
-# images:
-# - name: images
-#   newName: nginx
-#   newTag: 1.23.3-alpine
+images:
+- name: images
+  newName: nginx
+  newTag: 1.23.3-alpine
 
 resources:
   - ../../base
