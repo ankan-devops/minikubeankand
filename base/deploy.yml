@@ -22,7 +22,7 @@ spec:
       containers:
       - name: deploy
         image: images
-        command: ["sh", "-c", "echo 'test' > /usr/share/nginx/html/index.html"]
+        command: ["echo 'test' > /usr/share/nginx/html/index.html"]
         ports:
         - containerPort: 80
         resources:
