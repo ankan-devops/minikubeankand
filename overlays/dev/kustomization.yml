@@ -14,14 +14,14 @@ replicas:
 patchesJson6902:
 - target:
     version: v1
-    kind: Service
-    name: service
-  path: service.patch.yml
-- target:
-    version: v1
     name: deploy
     kind: Deployment
   path: deploy.patch.yml
+- target:
+    version: v1
+    kind: Service
+    name: service
+  path: service.patch.yml
 - target:
     version: v1
     kind: Ingress
