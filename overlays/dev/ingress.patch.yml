@@ -4,9 +4,9 @@
     - op: replace
       path: /spec/rules/0/host
       value: dev.local
-    - op: replace
-      path: /spec/rules/1/http/paths/0/backend/service/name
-      value: service-dev1
+    # - op: replace
+    #   path: /spec/rules/1/http/paths/0/backend/service/name
+    #   value: service-dev1
     - op: remove
       path: /spec/rules/1
       #value: dev1.local
