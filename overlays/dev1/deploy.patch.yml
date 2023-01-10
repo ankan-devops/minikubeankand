@@ -1,12 +1,12 @@
     - op: replace
       path: /spec/template/spec/containers/0/name
-      value: deploy-dev
+      value: deploy-dev1
     - op: replace
       path: /metadata/labels/app
-      value: deploy-dev
+      value: deploy-dev1
     - op: replace
       path: /spec/selector/matchLabels/app
-      value: deploy-dev
+      value: deploy-dev1
     - op: replace
       path: /spec/template/metadata/labels/app
-      value: deploy-dev
+      value: deploy-dev1

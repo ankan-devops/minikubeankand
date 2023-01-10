@@ -1,0 +1,32 @@
+nameSuffix: -dev1
+namespace: dev
+
+
+images:
+- name: images
+  newName: nginx
+  newTag: 1.22.1-alpine
+
+replicas:
+- name: deploy
+  count: 1
+
+patchesJson6902:
+- target:
+    version: v1
+    name: deploy
+    kind: Deployment
+  path: deploy.patch.yml
+- target:
+    version: v1
+    kind: Service
+    name: service
+  path: service.patch.yml
+- target:
+    version: v1
+    kind: Ingress
+    name: ingress
+  path: ingress.patch.yml
+
+resources:
+  - ../../base
