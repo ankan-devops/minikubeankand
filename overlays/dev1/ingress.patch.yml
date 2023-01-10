@@ -10,3 +10,6 @@
     - op: replace
       path: /spec/rules/1/host
       value: dev1.local
+    - op: replace
+      path: /metadata/name
+      value: ingress-dev
